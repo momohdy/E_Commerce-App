@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "client": "npm start --prefix client",
+    "server": "nodemon server/server.js",
+    "dev": "concurrently \"npm run client\" \"npm run server\" ",
+    "data:imported": "nodemon server/seedrs.js",
+    "data:destroyed": "node server/seedrs.js -d"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.3.1",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.4.0"
+  }
+}
