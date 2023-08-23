@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 5000;
-const dotenv = require("dotenv");
+// const dotenv = require("dotenv");
 const DBconnection = require("./config/DBconnection");
 const productRouter = require("./routes/productRoutes");
 const userRouter = require("./routes/userRoutes");
@@ -10,7 +10,7 @@ const orderRouter = require("./routes/orederRoutes");
 
 app.use(express.json());
 
-dotenv.config();
+// dotenv.config();
 
 DBconnection();
 
