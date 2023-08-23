@@ -1,6 +1,6 @@
-const mongoose = require('mongoose') ;
 
 const DBconnection = () =>{
+const mongoose = require('mongoose') ;
     try{
         mongoose.connect(process.env.MONGO_URL) 
         console.log("MONGODB connect");
