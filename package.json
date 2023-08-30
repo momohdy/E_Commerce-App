@@ -2,7 +2,7 @@
   "scripts": {
     "client": "npm start --prefix client",
     "server": "nodemon server/server.js",
-    "start": "concurrently \"npm run client\" \"npm run server\" ",
+    "start": "node server/server.js",
     "data:imported": "nodemon server/seedrs.js",
     "data:destroyed": "node server/seedrs.js -d"
   },
