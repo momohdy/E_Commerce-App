@@ -15,7 +15,8 @@ dotenv.config();
 
 DBconnection();
 
-const cors = require('cors')
+// using cors for production
+var cors = require('cors')
 app.use(cors())
 
 app.get("/", (req, res) => {
