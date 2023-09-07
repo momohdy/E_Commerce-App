@@ -20,7 +20,7 @@ function App() {
   const location = useLocation();
   const productDetails = location.state;
 
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(0);
   console.log(quantity);
 
   const resetQuantity = (i) => {
@@ -82,7 +82,7 @@ function App() {
 
               <div className="d-flex justify-content-between">
                 <p>
-                  {productDetails.isBocked > 0 ? (
+                  {productDetails.countInStock > 0 ? (
                     <div className="text-danger">In stock</div>
                   ) : (
                     <div className="text-danger">Out of stock</div>
@@ -108,22 +108,34 @@ function App() {
                   <Dropdown.Menu>
                     {Array.from(
                       { length: productDetails.countInStock },
-                      (_, i) => (
-                        <DropdownItem
-                          key={i}
-                          onClick={() => resetQuantity(i + 1)}
-                        >
-                          {i + 1}
-                        </DropdownItem>
-                      )
+                      (_, i) =>
+                        productDetails.countInStock > 0 && (
+                          <DropdownItem
+                            key={i}
+                            onClick={() => resetQuantity(i + 1)}
+                          >
+                            {i + 1}
+                          </DropdownItem>
+                        )
                     )}
                   </Dropdown.Menu>
                 </Dropdown>
-                <Button variant="primary">
-                  <Link to={`../ShoppingCarts/${productDetails._id}/${quantity}`} state={productDetails} style={{ textDecoration: 'none', color: 'white' }}>
+
+                {productDetails.countInStock > 0 ? (
+                  <Button variant="primary">
+                    <Link
+                      to={`../ShoppingCarts/${productDetails._id}/${quantity}`}
+                      state={productDetails}
+                      style={{ textDecoration: "none", color: "white" }}
+                    >
+                      Add to cart
+                    </Link>
+                  </Button>
+                ) : (
+                  <Button variant="primary" disabled>
                     Add to cart
-                  </Link>
-                </Button>
+                  </Button>
+                )}
               </div>
             </MDBCardBody>
           </MDBCard>

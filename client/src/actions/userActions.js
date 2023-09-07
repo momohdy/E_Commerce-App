@@ -56,6 +56,7 @@ export const userLogoutAction = () => async (dispatch) => {
   });
 
   localStorage.removeItem("userInformation");
+  localStorage.removeItem("cartItems");
 };
 
 export const userRegisterAction =

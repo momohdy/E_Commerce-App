@@ -1,16 +1,11 @@
 import React from "react";
-import {
-  MDBFooter,
-  MDBContainer,
-} from "mdb-react-ui-kit";
+import { MDBFooter, MDBContainer } from "mdb-react-ui-kit";
 
 export default function Footer() {
   return (
     <footer>
       <MDBFooter className="text-center" color="white" bgColor="dark">
-        <MDBContainer className="p-4">
-          
-        </MDBContainer>
+        <MDBContainer className="p-4"></MDBContainer>
 
         <div
           className="text-center p-3"
