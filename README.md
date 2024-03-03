@@ -1,6 +1,6 @@
 ## ElMAHDY Store - ECommerce Application
 
-![PHOTO](../ELMAHDY%20Store/client/public/images/README.png)
+![PHOTO](F:\TA7T ELEN4A2\ELMAHDY Store\client\public\images\README.png)
 
 # Description
 
