@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Row, Col } from "react-bootstrap";
 import Alert from "react-bootstrap/Alert";
-import Product from "./Product";
-import { listProducts } from "../actions/productActions";
+import Product from "./components/Product";
+import { listProducts } from "../../actions/productActions";
 
 export default function Home() {
   const dispatch = useDispatch();

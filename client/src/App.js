@@ -4,18 +4,18 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import { Container } from "react-bootstrap";
 
-import Header from "./components/partials/Header";
-import Footer from "./components/partials/Footer";
-import Home from "./components/Home";
-import DeatilsOfProduct from "./components/views/DeatilsOfProduct";
-import ShoppingCarts from "./components/views/ShoppingCarts";
-import Login from "./components/views/Login";
-import Register from "./components/views/Register";
-import Profile from "./components/views/Profile";
-import Shipping from "./components/views/Shipping";
-import Payment from "./components/views/Payment";
-import PlaceOrder from "./components/views/PlaceOrder";
-import OrderDetails from "./components/views/OrderDetails";
+import Header from "./views/partials/Header";
+import Footer from "./views/partials/Footer";
+import Home from "./views/home/Home";
+import DeatilsOfProduct from "./views/DeatilsOfProduct/DeatilsOfProduct";
+import ShoppingCarts from "./views/ShoppingCarts/ShoppingCarts";
+import Login from "./views/Login/Login";
+import Register from "./views/Register/Register";
+import Profile from "./views/Profile/Profile";
+import Shipping from "./views/Shipping/Shipping";
+import Payment from "./views/Payment/Payment";
+import PlaceOrder from "./views/PlaceOrder/PlaceOrder";
+import OrderDetails from "./views/OrderDetails/OrderDetails";
 
 function App() {
   return (

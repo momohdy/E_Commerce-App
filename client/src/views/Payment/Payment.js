@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { savePaymentMethod } from "../../actions/shoppingCartsActions";
-import  CheckoutSteps  from "./CheckoutSteps";
+import  CheckoutSteps  from "../CheckoutSteps/CheckoutSteps";
 
 
 function App() {

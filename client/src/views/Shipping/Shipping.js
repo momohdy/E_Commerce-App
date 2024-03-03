@@ -3,7 +3,7 @@ import { Form, Button } from "react-bootstrap";
 import { MDBContainer } from "mdb-react-ui-kit";
 import { useDispatch, useSelector } from "react-redux";
 import { saveShippingInformation } from "../../actions/shoppingCartsActions";
-import  CheckoutSteps  from "./CheckoutSteps";
+import  CheckoutSteps  from "../CheckoutSteps/CheckoutSteps";
 
 function App() {
   const dispatch = useDispatch();

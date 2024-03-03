@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogoutAction } from "../../actions/userActions";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 function App() {
   const dispatch = useDispatch();

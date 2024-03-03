@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,7 +13,7 @@ import {
   MDBListGroup,
   MDBListGroupItem,
 } from "mdb-react-ui-kit";
-import CheckoutSteps from "./CheckoutSteps";
+import CheckoutSteps from "../CheckoutSteps/CheckoutSteps";
 import { createOrderAction } from "../../actions/orderActions";
 // Note , you might nedd to write .js for orderActions
 
