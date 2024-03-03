@@ -1,5 +1,7 @@
 ## ElMAHDY Store - ECommerce Application
 
+![PHOTO](../ELMAHDY%20Store/client/public/images/README.png)
+
 # Description
 
 ## What my application does ?
@@ -84,7 +86,7 @@ redux-devtools-extension redux-thunk }   to install important dependencies
   jsonwebtoken
   mongoose } to install important dependencies 
 
-4 ) return to root folder 
+4 ) Keep in server folder  
 
 - run { npm run dev } to launch
 
@@ -99,13 +101,12 @@ MONGO_URL = Your MONGO_URL
 
 JWT_SECRET_KEY = Your JWT_SECRET_KEY
 
-PAYPAL_CLIENT_ID = Your JWT_SECRET_KEY
+PAYPAL_CLIENT_ID = Your PAYPAL_CLIENT_ID
 
 
 # How to Use the Project ?
 
  => [ PROJECT DEMO ](https://drive.google.com/file/d/12tfATKvguU7ed3vaVq9Sahdv4oibXH4Z/view?usp=sharing)
-
 
 # License
 
