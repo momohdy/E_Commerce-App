@@ -1,0 +1,1 @@
+Setting up different ports for admin and user interfaces in a React project involves running two separate instances of the application, each on its own port. This setup can help keep the admin and user parts of the application distinct and may offer some security benefits by separating access to different parts of your application.
