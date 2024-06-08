@@ -82,12 +82,12 @@ export const userRegisterAction =
         payload: postedData.data,
       });
 
-      dispatch({
-        type: USER_LOGIN_SUCCESS,
-        payload: postedData.data,
-      });
+      // dispatch({
+      //   type: USER_LOGIN_SUCCESS,
+      //   payload: postedData.data,
+      // });
 
-      localStorage.setItem("userInformation", JSON.stringify(postedData.data));
+      // localStorage.setItem("userInformation", JSON.stringify(postedData.data));
     } catch (err) {
       dispatch({
         type: USER_REGISTER_FAIL,

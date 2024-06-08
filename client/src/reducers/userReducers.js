@@ -39,7 +39,7 @@ export const userRegisterReducer = (state = {}, action) => {
       return { loading: true };
 
     case USER_REGISTER_SUCCESS:
-      return { loading: false, userInformation: action.payload };
+      return { loading: false, success: "Added successfully , wait until admin accept you" };
 
     case USER_REGISTER_FAIL:
       return { loading: false, error: action.payload };

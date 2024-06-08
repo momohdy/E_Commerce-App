@@ -5,28 +5,20 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogoutAction } from "../../actions/userActions";
-// import { useEffect } from "react";
 
 function App() {
   const dispatch = useDispatch();
 
   const { userInformation } = useSelector((state) => state.userLoginAndLogout);
-  //  console.log(userInformation);
-
 
   const logout = () => {
     dispatch(userLogoutAction());
   };
 
-  // useEffect(() => {
-  //   if(!userInformation){
-  //     dispatch(userLogoutAction());
-  //   }
-  // },[userInformation , dispatch])
-
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
+
         <Navbar.Brand>
           <Link
             className="text-decoration-none "
@@ -36,8 +28,10 @@ function App() {
             ELMAHDY SHOP
           </Link>
         </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+
+        <Navbar.Collapse id="basic-navbar-nav" className="ms-5">
           <Nav className="me-auto">
             <Nav.Link>
               <Link
@@ -75,6 +69,8 @@ function App() {
             )}
           </Nav>
         </Navbar.Collapse>
+
+
       </Container>
     </Navbar>
   );

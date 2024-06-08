@@ -7,7 +7,6 @@ const DBconnection = require("./config/DBconnection");
 const productRouter = require("./routes/productRoutes");
 const userRouter = require("./routes/userRoutes");
 const orderRouter = require("./routes/orederRoutes");
-// const errorHandlingMiddleware = require('./middleware/errorHandlingMiddleware') ;
 
 app.use(express.json());
 
@@ -31,13 +30,6 @@ app.get(`${api}/config/paypal`, (req, res) => {
 app.use(`${api}/products`, productRouter);
 app.use(`${api}/users`, userRouter);
 app.use(`${api}/orders`, orderRouter);
-
-
-// static files
-// app.use(express.static(path.join(__dirname, "./client/build")));
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, `./client/build/index.html`));
-// });
 
 // original url error
 app.use((req, res, next) => {

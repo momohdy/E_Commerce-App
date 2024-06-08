@@ -17,13 +17,13 @@ function App() {
 
   const userRegister = useSelector((state) => state.userRegister);
 
-  const { loading, error, userInformation } = userRegister;
+  const { loading, error, success } = userRegister;
 
-  useEffect(() => {
-    if (userInformation) {
-      window.location.href = "/";
-    }
-  }, [userInformation]);
+  // useEffect(() => {
+  //   if (userInformation) {
+  //     window.location.href = "/";
+  //   }
+  // }, [userInformation]);
 
   const handleOfSubmit = (e) => {
     e.preventDefault();
@@ -41,6 +41,7 @@ function App() {
   ) : (
     <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
       {message ? <Alert variant="danger"> {message} </Alert> : null}
+      {success ? <Alert variant="success"> {success} </Alert> : null}
       <MDBInput
         wrapperClass="mb-4"
         label="User Name"
