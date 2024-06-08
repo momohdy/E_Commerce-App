@@ -62,33 +62,13 @@ express-async-handler : Handling Asynchronous tasks
 
 - run { npm install } to install node_modules
 
-- run { npm install @fortawesome/fontawesome-svg-core 
-@fortawesome/free-solid-svg-icons @paypal/react-paypal-js 
-@reduxjs/toolkit @testing-library/jest-dom 
-@testing-library/react @testing-library/user-event 
-axios bootstrap 
-font-awesome mdb-react-ui-kit 
-mdbreact react 
-react-bootstrap react-dom 
-react-paypal-button-v2 react-redux 
-react-router-bootstrap react-router-dom 
-react-scripts redux 
-redux-devtools-extension redux-thunk }   to install important dependencies
 
 3 ) open server folder
 
 - run { npm init } to initialize your Node environment
-- run { npm install --save-dev concurrently } for running server side & client side simulattly
-- run { npm i cors express bcryptjs
-  dotenv
-  express
-  express-async-handler
-  jsonwebtoken
-  mongoose } to install important dependencies 
+- run { npm i } to install important dependencies 
 
-4 ) Keep in server folder  
-
-- run { npm run dev } to launch
+4 )  - run { npm run dev } to launch
 
 
 ## Set [.env] Variables 
@@ -97,7 +77,7 @@ NODE_ENV  = development
 
 PORT = Your PORT
 
-MONGO_URL = Your MONGO_URL
+MONGO_URL = Your MONGO_DB_URL
 
 JWT_SECRET_KEY = Your JWT_SECRET_KEY
 

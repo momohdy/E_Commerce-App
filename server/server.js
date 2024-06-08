@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const api = "/api/v1"
 const PORT = process.env.PORT || 5000;
 const dotenv = require("dotenv");
 const DBconnection = require("./config/DBconnection");
@@ -18,19 +19,18 @@ DBconnection();
 var cors = require("cors");
 app.use(cors());
 
-app.get("/", (req, res) => {
+app.get(`${api}/`, (req, res) => {
   res.send("Hello World!");
 });
 
-app.get("/config/paypal", (req, res) => {
-  //  Note , we dont remove {} yet
+app.get(`${api}/config/paypal`, (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID);
 });
 
 // router
-app.use("/products", productRouter);
-app.use("/users", userRouter);
-app.use("/orders", orderRouter);
+app.use(`${api}/products`, productRouter);
+app.use(`${api}/users`, userRouter);
+app.use(`${api}/orders`, orderRouter);
 
 
 // static files

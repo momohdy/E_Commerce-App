@@ -11,7 +11,7 @@ const authOfUser = asyncHandler(async (req, res) => {
     userEmailAndPassword &&
     (await userEmailAndPassword.matchPassword(password))
   ) {
-    res.json({
+    res.status(200).json({
       _id: userEmailAndPassword._id,
       name: userEmailAndPassword.name,
       email: userEmailAndPassword.email,
@@ -59,12 +59,11 @@ const register = asyncHandler(async (req, res) => {
 const getUserProfile = asyncHandler(async (req, res) => {
   const userDetails = await User.findById(req.user._id);
   if (userDetails) {
-    res.json({
+    res.status(200).json({
       _id: userDetails._id,
       name: userDetails.name,
       email: userDetails.email,
       isAdmin: userDetails.isAdmin,
-      
     });
   } else {
     res.status(404);
