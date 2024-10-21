@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {  PayPalButton } from 'react-paypal-button-v2';
+import { PayPalButton } from "react-paypal-button-v2";
 import Alert from "react-bootstrap/Alert";
 import { Container, Row, Col } from "react-bootstrap";
 import {
@@ -25,11 +25,11 @@ function App() {
   const dispatch = useDispatch();
   // SdkReady for paypal js
   const [sdkReady, setSdkReady] = useState(false);
+  const [tax, setTax] = useState(0);
 
   // order summary content ->
   let products = 0;
   let shipping = 0;
-  const [tax, setTax] = useState(0);
   useEffect(() => {
     setTax(Number(products * 0.15));
   }, [products]);
@@ -47,11 +47,10 @@ function App() {
 
   useEffect(() => {
     const addPayPalScript = async () => {
-      const client = await axios.get("/config/paypal");
+      const clientId = await axios.get("/config/paypal");
       const script = document.createElement("script");
       script.type = "text/javascript";
-      script.src = `https://www.paypal.com/sdk/js?client-id=${client.data}`;
-      //  we remove &components=YOUR_COMPONENTS
+      script.src = `https://www.paypal.com/sdk/js?client-id=${clientId.data}`;
       script.async = true;
       script.onload = () => {
         setSdkReady(true);
@@ -84,7 +83,7 @@ function App() {
   ) : (
     <Container>
       <Row>
-      <h2>ORDER {order._id} </h2>
+        <h2>ORDER {order._id} </h2>
         {error && <Alert variant="danger">{error}</Alert>}
 
         <Col md={8}>

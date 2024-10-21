@@ -28,13 +28,13 @@ export const addToCart = (id, quantity) => async (dispatch, getState) => {
       JSON.stringify(getState().shoppingCarts.cartItems)
     );
   } catch (err) {
-    // dispatch({
-    //   // type: PRODUCT_LIST_FAIL,
-    //   payload:
-    //     err.response && err.response.data.message
-    //       ? err.response.data.message
-    //       : err.message,
-    // });
+    dispatch({
+      // type: PRODUCT_LIST_FAIL,
+      payload:
+        err.response && err.response.data.message
+          ? err.response.data.message
+          : err.message,
+    });
   }
 };
 

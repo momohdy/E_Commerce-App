@@ -22,7 +22,7 @@ export const createOrderAction = (data) => async (dispatch, getState) => {
     const userInformation = getState().userLoginAndLogout.userInformation;
 
     // const   { userLoginAndLogout:  { userInformation } } = getState()
-    const postedData = await axios.post(`/orders`, data , {
+    const postedData = await axios.post(`/orders`, data, {
       // to be in json format
       headers: {
         "Content-Type": "application/json",
@@ -47,7 +47,6 @@ export const createOrderAction = (data) => async (dispatch, getState) => {
   }
 };
 
-
 export const getOrderDeatailsAction = (id) => async (dispatch, getState) => {
   try {
     dispatch({
@@ -57,20 +56,18 @@ export const getOrderDeatailsAction = (id) => async (dispatch, getState) => {
     const userInformation = getState().userLoginAndLogout.userInformation;
 
     // const   { userLoginAndLogout:  { userInformation } } = getState()
-    const postedData = await axios.get(`/orders/${id}` , {
+    const postedData = await axios.get(`/orders/${id}`, {
       // to be in json format
       headers: {
         Authorization: `Bearer ${userInformation.token}`,
       },
     });
 
-    
     dispatch({
       type: ORDER_DETAILS_SUCCESS,
       payload: postedData.data,
     });
     // console.log(postedData.data);
-    
   } catch (err) {
     dispatch({
       type: ORDER_DETAILS_FAIL,
@@ -82,40 +79,38 @@ export const getOrderDeatailsAction = (id) => async (dispatch, getState) => {
   }
 };
 
+export const payUbdateAction =
+  (id, paymentResult) => async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: ORDER_PAY_REQUEST,
+      });
 
-export const payUbdateAction = (id , paymentResult) => async (dispatch, getState) => {
-  try {
-    
-    dispatch({
-      type: ORDER_PAY_REQUEST,
-    });
-    
-    const userInformation = getState().userLoginAndLogout.userInformation;
-    
-    const postedData = await axios.put(`/orders/${id}/pay`, paymentResult , {
-      // to be in json format
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${userInformation.token}`,
-      },
-    });
-    
-    // console.log("suii");
+      const userInformation = getState().userLoginAndLogout.userInformation;
 
-    dispatch({
-      type: ORDER_PAY_SUCCESS,
-      payload: postedData.data,
-    });
+      const postedData = await axios.put(`/orders/${id}/pay`, paymentResult, {
+        // to be in json format
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userInformation.token}`,
+        },
+      });
 
-    // console.log(postedData.data);
+      // console.log("suii");
 
-  } catch (err) {
-    dispatch({
-      type: ORDER_PAY_FAIL,
-      payload:
-        err.response && err.response.data.message
-          ? err.response.data.message
-          : err.message,
-    });
-  }
-};
+      dispatch({
+        type: ORDER_PAY_SUCCESS,
+        payload: postedData.data,
+      });
+
+      // console.log(postedData.data);
+    } catch (err) {
+      dispatch({
+        type: ORDER_PAY_FAIL,
+        payload:
+          err.response && err.response.data.message
+            ? err.response.data.message
+            : err.message,
+      });
+    }
+  };

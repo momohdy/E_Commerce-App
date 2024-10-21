@@ -31,11 +31,11 @@ app.use(`${api}/products`, productRouter);
 app.use(`${api}/users`, userRouter);
 app.use(`${api}/orders`, orderRouter);
 
-// original url error
-app.use((req, res, next) => {
-  res.status(404);
-  next(new Error(`Not Found ${req.originalUrl}`));
-});
+// // original url error
+// app.use((req, res, next) => {
+//   res.status(404);
+//   next(new Error(`Not Found ${req.originalUrl}`));
+// });
 
 // error handler
 app.use((err, req, res, next) => {
