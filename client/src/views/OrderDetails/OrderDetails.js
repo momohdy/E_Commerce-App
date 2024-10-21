@@ -20,6 +20,7 @@ import {
 } from "../../actions/orderActions";
 import { ORDER_PAY_RESET } from "../../constants/orderConstants";
 import axios from "axios";
+import { API_BASE_URL } from "../../API_BASE_URL";
 
 function App() {
   const dispatch = useDispatch();
@@ -47,7 +48,7 @@ function App() {
 
   useEffect(() => {
     const addPayPalScript = async () => {
-      const clientId = await axios.get("/config/paypal");
+      const clientId = await axios.get(`${API_BASE_URL}/config/paypal`);
       const script = document.createElement("script");
       script.type = "text/javascript";
       script.src = `https://www.paypal.com/sdk/js?client-id=${clientId.data}`;

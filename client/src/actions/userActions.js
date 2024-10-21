@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../API_BASE_URL";
 import {
   USER_LOGIN_FAIL,
   USER_LOGIN_REQUEST,
@@ -23,7 +24,7 @@ export const userLoginAction = (email, password) => async (dispatch) => {
     });
 
     const postedData = await axios.post(
-      "/users/login",
+      `${API_BASE_URL}/users/login`,
       { email, password },
       {
         // to be in json format
@@ -67,7 +68,7 @@ export const userRegisterAction =
       });
 
       const postedData = await axios.post(
-        "/users",
+        `${API_BASE_URL}/users`,
         { name, email, password },
         {
           // to be in json format
@@ -110,7 +111,7 @@ export const userUbdateAction = (id,name, email, password) => async (dispatch,ge
     // const   { userLoginAndLogout:  { userInformation } } = getState() 
     console.log(name , email );
     const postedData = await axios.put(
-      "/users/profile",
+      `${API_BASE_URL}/users/profile`,
       { id , name, email, password },
       {
         // to be in json format
@@ -155,7 +156,7 @@ export const userGetProfileAction = () => async (dispatch ,getState) => {
     const userInformation = getState().userLoginAndLogout.userInformation
 
     // const   { userLoginAndLogout:  { userInformation } } = getState() 
-    const postedData = await axios.get(`/users/profile`, {
+    const postedData = await axios.get(`${API_BASE_URL}/users/profile`, {
       // to be in json format
       headers: {
         "Content-Type": "application/json",

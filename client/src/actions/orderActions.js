@@ -11,6 +11,7 @@ import {
   ORDER_PAY_REQUEST,
   ORDER_PAY_SUCCESS,
 } from "../constants/orderConstants";
+import { API_BASE_URL } from "../API_BASE_URL";
 // Note , you might nedd to write .js for orderActions
 
 export const createOrderAction = (data) => async (dispatch, getState) => {
@@ -22,7 +23,7 @@ export const createOrderAction = (data) => async (dispatch, getState) => {
     const userInformation = getState().userLoginAndLogout.userInformation;
 
     // const   { userLoginAndLogout:  { userInformation } } = getState()
-    const postedData = await axios.post(`/orders`, data, {
+    const postedData = await axios.post(`${API_BASE_URL}/orders`, data, {
       // to be in json format
       headers: {
         "Content-Type": "application/json",
@@ -56,7 +57,7 @@ export const getOrderDeatailsAction = (id) => async (dispatch, getState) => {
     const userInformation = getState().userLoginAndLogout.userInformation;
 
     // const   { userLoginAndLogout:  { userInformation } } = getState()
-    const postedData = await axios.get(`/orders/${id}`, {
+    const postedData = await axios.get(`${API_BASE_URL}/orders/${id}`, {
       // to be in json format
       headers: {
         Authorization: `Bearer ${userInformation.token}`,
@@ -88,7 +89,7 @@ export const payUbdateAction =
 
       const userInformation = getState().userLoginAndLogout.userInformation;
 
-      const postedData = await axios.put(`/orders/${id}/pay`, paymentResult, {
+      const postedData = await axios.put(`${API_BASE_URL}/orders/${id}/pay`, paymentResult, {
         // to be in json format
         headers: {
           "Content-Type": "application/json",
