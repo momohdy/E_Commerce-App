@@ -12,7 +12,7 @@ export const listProducts = async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
 
-    const productsHadFetched = await axios.get("/products");
+    const productsHadFetched = await axios.get("https://mahdy-shop.onrender.com/products");
 
     dispatch({ type: PRODUCT_LIST_SUCCESS, payload: productsHadFetched.data });
   } catch (err) {
